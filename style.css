@@ -1,0 +1,67 @@
+:root {
+    --primary-header: "Lilita One", sans-serif;
+    --primary-font: "Patrick Hand", cursive;
+    --main-color: #8a61ff;
+    --secondary-color: #ff68ff;
+    --background-color: #d6f1ef;
+}
+
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.patrick-hand-regular {
+  font-family: "Patrick Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.header {
+    font-family: var(--primary-header);
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+.text {
+    font-family: var(--primary-font);
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+.image-style {
+    width: 100px;
+}
+.hero-background {
+  background: linear-gradient(180deg, #cceeff 0%, #ffffff 100%);
+  height: 100vh;
+  position: relative;
+  overflow: hidden; /* För att löven inte ska skapa scrollbars */
+}
+
+
+
+.leaf {
+    position: absolute;
+    top: -20px; /* Startar precis ovanför skärmen */
+    width: 15px;
+    height: 15px;
+    background-color: var(--secondary-color);
+    border-radius: 0 70% 0 70%; /* Bladform */
+    opacity: 0.8;
+    pointer-events: none; /* Så de inte är i vägen när man klickar */
+    z-index: 1; /* Lägg dem bakom din text om du vill, eller framför */
+    
+    /* Animationen använder en variabel för slutpositionen */
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        /* Denna variabel sätts av JavaScript för varje löv */
+        transform: translateY(var(--fall-distance)) rotate(540deg);
+        opacity: 0;
+    }
+}
+
