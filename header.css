@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* --- 1. VARIABLER & GRUND --- */
 :root {
     --primary-header: "Lilita One", sans-serif;
@@ -152,4 +153,151 @@ body {
     .nav-links a { font-size: 0.9rem; }
     .logo { font-size: 1rem; }
     .cta-pill { padding: 5px 12px !important; font-size: 0.85rem !important; }
+=======
+/* --- 1. VARIABLER & GRUND --- */
+:root {
+    --primary-header: "Lilita One", sans-serif;
+    --primary-font: "Patrick Hand", cursive;
+    --main-color: #8a61ff;
+    --secondary-color: #ff68ff;
+    --bg-dark: #0d0c12; /* Mörk bakgrund för att färgerna ska poppa */
+    --background-color: #d6f1ef;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. ANIMATIONER (Keyframes) --- */
+
+/* Mjukt svävande för hela navbaren */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Söt wiggle för Patrick Hand-länkar */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-1.5deg); }
+    75% { transform: rotate(1.5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Subtil pulsande glöd för loggan */
+@keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 2px rgba(138, 97, 255, 0.2)); }
+    50% { filter: drop-shadow(0 0 10px rgba(138, 97, 255, 0.5)); }
+    100% { filter: drop-shadow(0 0 2px rgba(138, 97, 255, 0.2)); }
+}
+
+/* --- 3. NAVBAR LAYOUT --- */
+
+.navbar {
+    position: fixed;
+    top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.nav-container {
+    background: rgba(20, 18, 26, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(138, 97, 255, 0.3);
+    padding: 10px 35px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    
+    /* Animation: Denna gör att hela naven "andas" */
+    animation: float 5s ease-in-out infinite;
+}
+
+/* --- 4. LOGO (Lilita One) --- */
+
+.logo {
+    font-family: var(--primary-header);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    animation: logoGlow 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+    
+    /* Standard-egenskapen för framtida kompatibilitet */
+    background-clip: text;
+    
+    /* Vendor-prefix för stöd i nuvarande webbläsare (Chrome, Safari, Edge) */
+    -webkit-background-clip: text;
+    
+    /* Gör texten genomskinlig så att bakgrunds-gradienten syns igenom */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback om webbläsaren inte stödjer text-fill-color */
+}
+
+/* --- 5. LÄNKAR (Patrick Hand) --- */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-family: var(--primary-font);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem; /* Patrick Hand behöver lite storlek */
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px rgba(255, 104, 255, 0.5);
+    animation: wiggle 0.4s ease-in-out infinite;
+}
+
+/* --- 6. CTA KNAPP --- */
+
+.cta-pill {
+    background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+    color: white !important;
+    padding: 8px 24px !important;
+    border-radius: 50px;
+    font-size: 1.15rem !important;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(138, 97, 255, 0.3);
+    /* Mjuk marshmallow-känsla vid hovring */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    animation: none !important; /* Ingen wiggle på knappen */
+}
+
+.cta-pill:hover {
+    transform: scale(1.1) translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(255, 104, 255, 0.5) !important;
+    text-shadow: none !important;
+>>>>>>> 7222ae7444a9dec52f7b66608b7300f8580f6d24
 }
